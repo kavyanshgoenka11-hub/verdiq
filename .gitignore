@@ -30,3 +30,6 @@ dist-ssr
 
 # Runtime uploaded/generated files
 server/uploads/
+
+# Local database backups
+*_backup.sql
