@@ -1,10 +1,6 @@
-import {
-  DragEvent,
-  ChangeEvent,
-  useEffect,
-  useState,
-} from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import type { DragEvent, ChangeEvent } from "react";
 
 type Project = {
   id: number;

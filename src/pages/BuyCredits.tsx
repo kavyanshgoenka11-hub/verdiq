@@ -121,7 +121,7 @@ function BuyCredits() {
   if (!buyerToken || buyer?.role !== "buyer") {
     navigate("/login", {
       state: {
-        redirectTo: `/marketplace/credits/${credit?.listing_id}/buy`,
+        redirectTo: `/marketplace/credits/${id}/buy`,
         quantity: selectedQuantity,
       },
     });

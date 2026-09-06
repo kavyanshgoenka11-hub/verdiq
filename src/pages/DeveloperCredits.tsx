@@ -28,7 +28,7 @@ type Credit = {
 function DeveloperCredits() {
   const navigate = useNavigate();
 
-  const [credits, setCredits] = useState<CreditBatch[]>([]);
+  const [credits, setCredits] = useState<Credit[]>([]);
   const [loading, setLoading] = useState(true);
 
   const [error, setError] = useState("");
@@ -84,7 +84,7 @@ function DeveloperCredits() {
     loadCredits();
   }, []);
 
-  const handleListForSale = async (credit: CreditBatch) => {
+  const handleListForSale = async (credit: Credit) => {
     const token = localStorage.getItem("verdiq_token");
 
     if (!token) {
@@ -335,7 +335,7 @@ function DeveloperCredits() {
                             <p className="mt-1 text-2xl font-semibold">
                               ₹
                               {Number(
-                                credit.price_per_credit
+                                credit.listing_price
                               ).toLocaleString()}
                               <span className="ml-1 text-sm font-normal text-[#7b8578]">
                                 / credit
