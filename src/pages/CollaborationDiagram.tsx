@@ -1,0 +1,141 @@
+import React from "react";
+
+export const VerdiqCollaborationDiagram: React.FC = () => {
+  return (
+    <main className="min-h-screen bg-[#f6f8f3] text-[#172018]">
+
+      {/* ================= PAGE INTRO ================= */}
+      <section className="mx-auto max-w-7xl px-8 pb-14 pt-16 lg:px-16 lg:pb-16 lg:pt-20">
+        <div className="max-w-4xl">
+
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#c6d5c3] bg-[#eef5eb] px-4 py-2 text-sm font-medium text-[#37643d]">
+            <span className="h-2 w-2 rounded-full bg-[#4d8b55]" />
+            UML · Collaboration Diagram
+          </div>
+
+          <h1 className="mt-7 text-5xl font-semibold leading-[1.03] tracking-[-0.045em] sm:text-6xl">
+            Verdiq
+            <span className="text-[#4d8b55]"> Collaboration Diagram</span>
+          </h1>
+
+          <p className="mt-6 max-w-3xl text-base leading-7 text-[#657064]">
+            A behavioral view of the Verdiq platform showing how users,
+            application components, and the database collaborate to support
+            project verification, credit issuance, marketplace transactions,
+            and credit retirement.
+          </p>
+
+        </div>
+      </section>
+
+
+      {/* ================= DIAGRAM SECTION ================= */}
+      <section className="border-y border-[#dce3d8] bg-white">
+        <div className="mx-auto max-w-[1500px] px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
+
+          <div className="overflow-hidden rounded-2xl border border-[#bcc8be] bg-white shadow-[0_16px_50px_rgba(25,45,30,0.10)]">
+
+            {/* ================= DIAGRAM HEADER ================= */}
+            <div className="border-b border-[#ccd5cd] bg-white px-8 py-7">
+
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#53715a]">
+                Formal UML interaction model
+              </p>
+
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight">
+                Verdiq — Collaboration Diagram
+              </h2>
+
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-[#657064]">
+                The collaboration diagram represents the communication between
+                Verdiq users, the application backend, and the MySQL database
+                during the major carbon-credit lifecycle operations.
+              </p>
+
+            </div>
+
+
+            {/* ================= COLLABORATION DIAGRAM IMAGE ================= */}
+            <div className="bg-[#fbfcfa] p-5 sm:p-8 lg:p-10">
+              <div className="overflow-x-auto pb-2">
+
+                <div className="flex min-w-[1100px] justify-center">
+                  <div className="overflow-hidden rounded-2xl border border-[#d5ddd6] bg-white shadow-[0_8px_24px_rgba(25,45,30,0.06)]">
+                    <img
+                      src="/CollaborationDiagram.png"
+                      alt="Verdiq Collaboration Diagram"
+                      className="block h-auto max-w-full object-contain"
+                    />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            {/* ================= SUPPORTING INFORMATION ================= */}
+            <div className="border-t border-[#dbe2dc] bg-[#fbfcfa] px-8 py-7">
+              <div className="grid gap-6 md:grid-cols-3">
+
+                <div className="rounded-2xl border border-[#d8e0d9] bg-white p-5">
+                  <p className="text-sm font-semibold text-[#35653c]">
+                    Platform Participants
+                  </p>
+
+                  <p className="mt-2 text-xs leading-5 text-[#657064]">
+                    Developers, Auditors, Administrators, and Buyers
+                    communicate with the Verdiq application according to
+                    their respective responsibilities.
+                  </p>
+                </div>
+
+
+                <div className="rounded-2xl border border-[#d8e0d9] bg-white p-5">
+                  <p className="text-sm font-semibold text-[#35653c]">
+                    Backend Coordination
+                  </p>
+
+                  <p className="mt-2 text-xs leading-5 text-[#657064]">
+                    The Express backend coordinates authentication,
+                    project verification, credit issuance, marketplace
+                    operations, footprint reporting, and retirement.
+                  </p>
+                </div>
+
+
+                <div className="rounded-2xl border border-[#d8e0d9] bg-white p-5">
+                  <p className="text-sm font-semibold text-[#35653c]">
+                    Data Persistence
+                  </p>
+
+                  <p className="mt-2 text-xs leading-5 text-[#657064]">
+                    MySQL stores the persistent application data required
+                    for users, projects, audits, credits, listings,
+                    purchases, retirements, certificates, and footprint
+                    reports.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+
+            {/* ================= NOTE ================= */}
+            <div className="border-t border-[#dce3d8] bg-white px-8 py-5">
+              <p className="text-xs leading-6 text-[#657064]">
+                The collaboration diagram focuses on the principal
+                communication paths between Verdiq participants and the
+                application backend, while lower-level implementation details
+                are abstracted.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+};
+
+export default VerdiqCollaborationDiagram;
