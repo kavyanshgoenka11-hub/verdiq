@@ -243,17 +243,21 @@ function Footer() {
 
 
         {/* ================= BOTTOM BAR ================= */}
-        <div className="mt-8 flex flex-col gap-3 border-t border-[#354137] pt-5 sm:flex-row sm:items-center sm:justify-between">
+        {/* ================= BOTTOM BAR ================= */}
+<div className="mt-8 flex flex-col gap-3 border-t border-[#354137] pt-5 sm:flex-row sm:items-center sm:justify-between">
 
-          <p className="text-xs text-[#8f9d90]">
-            © {new Date().getFullYear()} Verdiq. All rights reserved.
-          </p>
+  <p className="text-xs text-[#8f9d90]">
+    © {new Date().getFullYear()} Verdiq. All rights reserved.
+  </p>
 
-          <p className="text-xs text-[#8f9d90]">
-            Measure. Verify. Make an Impact.
-          </p>
+  <p className="text-xs text-[#8f9d90]">
+    Designed & developed by{" "}
+    <span className="font-medium text-[#b8d4b9]">
+      Kavyansh Goenka
+    </span>
+  </p>
 
-        </div>
+</div>
 
       </div>
     </footer>
