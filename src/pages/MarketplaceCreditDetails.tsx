@@ -1,7 +1,7 @@
 
-
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type Document = {
   id: number;
@@ -59,7 +59,7 @@ function MarketplaceCreditDetails() {
       return;
     }
 
-    fetch(`http://localhost:5000/api/marketplace/credits/${id}`,)
+    fetch(`${API_BASE_URL}/api/marketplace/credits/${id}`,)
       .then(async (response) => {
         const data = await response.json();
 
@@ -277,7 +277,7 @@ function MarketplaceCreditDetails() {
                   {credit.documents.map((document) => (
                     <a
                       key={document.id}
-                      href={`http://localhost:5000${document.file_url}`}
+                      href={`${API_BASE_URL}${document.file_url}`}
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center justify-between rounded-2xl border border-[#dce3d8] bg-[#fbfcfa] px-5 py-4 transition hover:bg-[#f3f7f1]"

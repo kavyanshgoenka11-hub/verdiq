@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type AdminStats = {
   total_users: number;
@@ -22,7 +23,7 @@ function AdminDashboard() {
       return;
     }
 
-    fetch("http://localhost:5000/api/admin/stats", {
+    fetch(`${API_BASE_URL}/api/admin/stats`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

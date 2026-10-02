@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type PortfolioSummary = {
   total_purchased: number;
@@ -100,7 +101,7 @@ function Dashboard() {
         const [portfolioResponse, reportsResponse] =
           await Promise.all([
             fetch(
-              "http://localhost:5000/api/buyer/portfolio",
+              `${API_BASE_URL}/api/buyer/portfolio`,
               {
                 headers: {
                   Authorization: `Bearer ${token}`,
@@ -109,7 +110,7 @@ function Dashboard() {
             ),
 
             fetch(
-              "http://localhost:5000/api/buyer/footprint-reports",
+              `${API_BASE_URL}/api/buyer/footprint-reports`,
               {
                 headers: {
                   Authorization: `Bearer ${token}`,

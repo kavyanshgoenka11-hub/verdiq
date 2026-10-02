@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { API_BASE_URL } from "../api";
+
 type UserRole =
   | "buyer"
   | "developer"
@@ -45,7 +47,7 @@ function AdminUsers() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/users",
+        `${API_BASE_URL}/api/admin/users`,
         {
           method: "POST",
           headers: {

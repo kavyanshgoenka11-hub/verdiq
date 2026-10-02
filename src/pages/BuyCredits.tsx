@@ -1,5 +1,6 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../api";
 
 type Credit = {
   id: number;
@@ -43,7 +44,7 @@ function BuyCredits() {
     }
 
     fetch(
-      `http://localhost:5000/api/marketplace/credits/${id}`,
+      `${API_BASE_URL}/api/marketplace/credits/${id}`,
     )
       .then(async (response) => {
         const data = await response.json();
@@ -160,7 +161,7 @@ function BuyCredits() {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/marketplace/listings/${id}/purchase`,
+      `${API_BASE_URL}/api/marketplace/listings/${id}/purchase`,
       {
         method: "POST",
 

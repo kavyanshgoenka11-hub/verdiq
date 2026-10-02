@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type Credit = {
   id: number;
@@ -52,7 +53,7 @@ function DeveloperCredits() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/developer/credits",
+        `${API_BASE_URL}/api/developer/credits`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -105,7 +106,7 @@ function DeveloperCredits() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/developer/credits/${credit.id}/list`,
+        `${API_BASE_URL}/api/developer/credits/${credit.id}/list`,
         {
           method: "PATCH",
           headers: {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type Retirement = {
   id: number;
@@ -63,7 +64,7 @@ function RetirementSuccess() {
     }
 
     fetch(
-      `http://localhost:5000/api/buyer/retirements/${retirementId}`,
+      `${API_BASE_URL}/api/buyer/retirements/${retirementId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

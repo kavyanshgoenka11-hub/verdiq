@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type CalculationResult = {
   scope1: number;
@@ -185,7 +186,7 @@ function Calculator() {
         Number(travel) || 0;
 
       const response = await fetch(
-        "http://localhost:5000/api/buyer/footprint-reports",
+        `${API_BASE_URL}/api/buyer/footprint-reports`,
         {
           method: "POST",
 
@@ -344,7 +345,7 @@ function Calculator() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/buyer/footprint-reports/${savedReport.id}/finalize`,
+        `${API_BASE_URL}/api/buyer/footprint-reports/${savedReport.id}/finalize`,
         {
           method: "PATCH",
 

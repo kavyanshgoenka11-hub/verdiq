@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type Purchase = {
   id: number;
@@ -69,7 +70,7 @@ function PurchaseSuccess() {
     }
 
     fetch(
-      `http://localhost:5000/api/buyer/purchases/${purchaseId}`,
+      `${API_BASE_URL}/api/buyer/purchases/${purchaseId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

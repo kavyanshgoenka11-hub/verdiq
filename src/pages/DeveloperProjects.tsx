@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import type { DragEvent, ChangeEvent } from "react";
+import { API_BASE_URL } from "../api";
 
 type Project = {
   id: number;
@@ -173,7 +174,7 @@ function DeveloperProjects() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/developer/projects",
+        `${API_BASE_URL}/api/developer/projects`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -199,7 +200,7 @@ function DeveloperProjects() {
         projectList.map(async (project) => {
           try {
             const documentResponse = await fetch(
-              `http://localhost:5000/api/developer/projects/${project.id}/documents`,
+              `${API_BASE_URL}/projects/${project.id}/documents`,
               {
                 headers: {
                   Authorization: `Bearer ${token}`,
@@ -262,7 +263,7 @@ function DeveloperProjects() {
       formData.append("document", file);
 
       const response = await fetch(
-        `http://localhost:5000/api/developer/projects/${projectId}/documents`,
+        `${API_BASE_URL}/api/developer/projects/${projectId}/documents`,
         {
           method: "POST",
           headers: {
@@ -314,7 +315,7 @@ function DeveloperProjects() {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/developer/projects/${projectId}/submit`,
+      `${API_BASE_URL}/api/developer/projects/${projectId}/submit`,
       {
         method: "PATCH",
         headers: {

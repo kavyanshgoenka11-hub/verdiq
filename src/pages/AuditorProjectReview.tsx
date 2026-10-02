@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type Document = {
   id: number;
@@ -71,7 +72,7 @@ function AuditorProjectReview() {
       return;
     }
 
-    fetch(`http://localhost:5000/api/auditor/projects/${id}`, {
+    fetch(`${API_BASE_URL}/api/auditor/projects/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -169,7 +170,7 @@ function AuditorProjectReview() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/auditor/projects/${id}/review`,
+        `${API_BASE_URL}/api/auditor/projects/${id}/review`,
         {
           method: "PATCH",
           headers: {

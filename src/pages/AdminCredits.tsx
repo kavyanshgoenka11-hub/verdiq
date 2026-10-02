@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { API_BASE_URL } from "../api";
+  
 type VerifiedProject = {
   id: number;
   name: string;
@@ -38,7 +40,7 @@ function AdminCredits() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/admin/projects/verified",
+        `${API_BASE_URL}/api/admin/projects/verified`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -101,7 +103,7 @@ function AdminCredits() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/projects/${project.id}/issue-credits`,
+        `${API_BASE_URL}/api/admin/projects/${project.id}/issue-credits`,
         {
           method: "POST",
           headers: {

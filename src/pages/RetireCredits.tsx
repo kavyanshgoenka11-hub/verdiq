@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type Purchase = {
   id: number;
@@ -57,7 +58,7 @@ function RetireCredits() {
     }
 
     fetch(
-      `http://localhost:5000/api/buyer/purchases/${purchaseId}`,
+      `${API_BASE_URL}/api/buyer/purchases/${purchaseId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -127,7 +128,7 @@ function RetireCredits() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/buyer/purchases/${purchase.id}/retire`,
+        `${API_BASE_URL}/api/buyer/purchases/${purchase.id}/retire`,
         {
           method: "POST",
           headers: {

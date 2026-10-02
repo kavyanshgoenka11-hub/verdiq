@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type Holding = {
   purchase_id: number;
@@ -114,7 +115,7 @@ function Portfolio() {
     }
 
     fetch(
-      "http://localhost:5000/api/buyer/portfolio",
+      `${API_BASE_URL}/api/buyer/portfolio`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

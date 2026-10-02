@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type Overview = {
   total_users: number;
@@ -110,7 +111,7 @@ function Home() {
     const loadOverview = async () => {
       try {
         const data = await fetchJson(
-          "http://localhost:5000/api/public/overview",
+          `${API_BASE_URL}/api/public/overview`,
         );
 
         if (cancelled) return;
@@ -157,7 +158,7 @@ function Home() {
     const loadLeaderboard = async () => {
       try {
         const data = await fetchJson(
-          "http://localhost:5000/api/public/leaderboard",
+          `${API_BASE_URL}/api/public/leaderboard`,
         );
 
         if (cancelled) return;
@@ -216,7 +217,7 @@ function Home() {
     const loadScopeData = async () => {
       try {
         const data = await fetchJson(
-          "http://localhost:5000/api/public/scope-breakdown",
+          `${API_BASE_URL}/api/public/scope-breakdown`,
         );
 
         if (cancelled) return;
@@ -253,7 +254,7 @@ function Home() {
     const loadProjects = async () => {
       try {
         const data = await fetchJson(
-          "http://localhost:5000/api/public/projects",
+          `${API_BASE_URL}/api/public/projects`,
         );
 
         if (cancelled) return;
@@ -315,7 +316,7 @@ function Home() {
     const loadClimate = async () => {
       try {
         const data = await fetchJson(
-          "http://localhost:5000/api/public/climate",
+          `${API_BASE_URL}/api/public/climate`,
         );
 
         const ppm = Number(

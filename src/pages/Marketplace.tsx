@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type MarketplaceCredit = {
   id: number;
@@ -30,7 +31,7 @@ function Marketplace() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/marketplace/credits")
+    fetch(`${API_BASE_URL}/api/marketplace/credits`)
       .then(async (response) => {
         const data = await response.json();
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 type DeveloperProject = {
   id: number;
@@ -84,7 +85,7 @@ function DeveloperDashboard() {
           creditsResponse,
         ] = await Promise.all([
           fetch(
-            "http://localhost:5000/api/developer/projects",
+            `${API_BASE_URL}/api/developer/projects`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -93,7 +94,7 @@ function DeveloperDashboard() {
           ),
 
           fetch(
-            "http://localhost:5000/api/developer/credits",
+            `${API_BASE_URL}/api/developer/credits`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
